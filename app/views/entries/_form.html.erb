@@ -1,0 +1,22 @@
+<%= render "errors", obj: @entry %>
+
+ <table class = "attr">
+	<tr>
+		<th width="80"><%= f.label :title %></th>
+		<td><%= f.text_field :title, size: 50 %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :body %></th>
+		<td><%= f.text_area :body, rows: 10, cols: 45 %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :posted_at, for: "entry_posted_at_li" %></th>
+		<td><%= f.datetime_select :posted_at,
+						start_year: 2000, end_year: Time.now.year + 1,
+						use_month_numbers: true %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :status %></th>
+		<td><%= f.select :status, Entry.status_options %></td>
+	</tr>
+</table>

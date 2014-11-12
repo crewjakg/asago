@@ -1,0 +1,9 @@
+<% @page_title = "会員の編集" %>
+<h1><%= @page_title %></h1>
+
+<p><%= link_to "会員の詳細に戻る",[:admin, :member] %></p>
+
+<%= form_for [:admin, @member], html: { multipart: true } do |f| %>
+<%= render "form", f: f %>
+<p><%= f.submit %></p>
+<% end %>

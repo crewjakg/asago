@@ -1,0 +1,9 @@
+<% @page_title = "マイアカウント情報の編集" %>
+<h1><%= @page_title %></h1>
+
+<p><%= link_to "マイアカウントに戻る", :account %></p>
+
+<%= form_for @member, url: :account, html: { multipart: true } do |f| %>
+<%= render "admin/members/form", f: f %>
+<p><%= f.submit %></p>
+<% end %>
