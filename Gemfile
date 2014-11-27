@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
+ruby '2.1.2'
 
 group :default do
 	gem 'rails', '4.1.5'
-	gem 'mysql2'
 	gem 'sass-rails', '~> 4.0.3'
 	gem 'uglifier', '>= 1.3.0'
 	gem 'coffee-rails', '~> 4.0.0'
@@ -11,7 +11,6 @@ group :default do
 	gem 'turbolinks'
 	gem 'jbuilder', '~> 2.0'
 	gem 'bcrypt', '~> 3.1.7'
-	gem 'i18n_generators'
 	gem 'will_paginate', '~> 3.0'  # ページネーション機能
 	gem 'haml'
 	gem 'enum_help' #共用体を使用することが出来る
@@ -20,8 +19,10 @@ group :default do
 end
 
 group :development, :test do
+	gem 'mysql2'
 	gem 'awesome_print'  #ハッシュなどを読みやすくする メソッド apにobjectを渡す
 	gem 'tapp'
+	gem 'i18n_generators'
 
 end
 
@@ -40,6 +41,11 @@ group :development do
 	gem 'bullet'
 	gem 'quiet_assets'
 	gem 'annotate'
+end
+
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
 end
 
 group :doc do

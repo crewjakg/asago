@@ -49,7 +49,5 @@ test:
 #
 production:
   <<: *default
-  database: asago_production
-  username: asago
-  password: <%= ENV['TESTMYSQL_DATABASE_PASSWORD'] %>
+  database: db/production.pg
 
